@@ -1,0 +1,9 @@
+  \\ test_Remove_Comments_in_JSON.json
+{  \\ start !
+    "a": 0,  \\ "first" comment
+    "b": "1",
+    "c": " \\",  \\ "third" comment
+    "d": " http:\\",
+    "e": "\\",  \\ "ws:\\xx",
+    "email": "http:\\admin@qq.com"  \\ my email address
+}

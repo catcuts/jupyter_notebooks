@@ -1,0 +1,7 @@
+{
+    "a": "call:datetime.date(1999, 9, 11)",
+    "b": 2,
+    "c": "true",
+    "d": "test.json",
+    "e": null
+}
