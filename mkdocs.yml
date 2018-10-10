@@ -1,0 +1,7 @@
+pages:
+- {"web\\ http\\ \u5173\u4E8E\\ POST\u3001PUT\u3001PATCH\\ \u7684\u533A\u522B": "web\\\
+    \ http\\ \u5173\u4E8E\\ POST\u3001PUT\u3001PATCH\\ \u7684\u533A\u522B.md"}
+- Home:
+  - {"web\\ http\\ \u5173\u4E8E\\ POST\u3001PUT\u3001PATCH\\ \u7684\u533A\u522B": "Home/web\\\
+      \ http\\ \u5173\u4E8E\\ POST\u3001PUT\u3001PATCH\\ \u7684\u533A\u522B.md"}
+site_name: My Docs
