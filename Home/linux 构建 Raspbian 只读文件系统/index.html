@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>My Docs</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>linux 构建 Raspbian 只读文件系统 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,13 +19,13 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">My Docs</a>
+                    <a class="navbar-brand" href="../..">My Docs</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,14 +47,14 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
+                                <a href="../../web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="Home/web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
+    <a href="../web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
 </li>
                                 </ul>
                             </li>
@@ -74,28 +74,16 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
-            <li><a href="#commands">Commands</a></li>
-            <li><a href="#project-layout">Project layout</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<p>参照 <a href="https://hallard.me/raspberry-pi-read-only/">这篇指导</a> 制作完成，并测试。</p>
+<p><a href="https://gitlab.com/larsfp/rpi-readonly">这里</a> 是别人根据上一篇写的脚本。（我自己也写了一个，目前用着没问题，除了 dpchcd5 服务启动异常，不过这里这个脚本我也没测试过。）</p>
+<p>遇到了 <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=191959">dhcpcd5 服务启动失败的问题</a>，似乎不影响使用，只是在系统启动时会被服务超时卡很久，我设置了服务启动超时参数为 20s（对单个服务设置超时参数，失败）。</p>
+<p><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=161416">这篇</a> 提出用 overlay 系统来构建只读系统和读写文件系统层——没有实践过，仅供参考。</p>
+<p><a href="https://wiki.debian.org/ReadonlyRoot#Enable_readonly_root">这一篇</a> 是 Debian 系统通用的只读系统构建方式，<a href="https://www.raspberrypi.org/forums/viewtopic.php?t=22596">这篇</a> 是对它的提炼。<a href="../%5B%20NTE%20%5D%20Notebooks_fragment/linux%20构建%20Debian%20只读系统【译】.ipynb">这里</a> 是我做的译文。</p>
+<p><a href="https://www.logicsupply.com/explore/io-hub/how-to-build-a-read-only-linux-system/">这篇</a> 使用了 union 文件系统来构建——也没有实践过。</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -103,11 +91,11 @@ docs/
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -175,8 +163,3 @@ docs/
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2018-10-10 11:02:57
--->

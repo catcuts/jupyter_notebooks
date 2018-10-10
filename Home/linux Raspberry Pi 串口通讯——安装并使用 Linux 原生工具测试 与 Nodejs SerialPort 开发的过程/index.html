@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Orange Pi GPIO 串口通讯 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">My Docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#orange-pi-gpio">Orange Pi GPIO 串口通讯</a></li>
+            <li><a href="#linux-nodejs-serialport">——安装并使用 Linux 原生工具测试 与 Nodejs SerialPort 开发的过程</a></li>
+            <li><a href="#_1">目录</a></li>
+        <li class="main "><a href="#user-privilege-specification">User privilege specification</a></li>
+            <li><a href="#1-gcc-48-g-48">1. 安装 gcc 4.8 和 g++ 4.8</a></li>
+            <li><a href="#2-gpio">2. 启用 GPIO 串口</a></li>
+            <li><a href="#3-gpio">3. 测试 GPIO 串口</a></li>
+            <li><a href="#4-nodejs">4. 安装 nodejs</a></li>
+            <li><a href="#5-serialport">5. 安装 serialport</a></li>
+            <li><a href="#6">6. 开发示例</a></li>
+            <li><a href="#_3">其它事项</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="orange-pi-gpio">Orange Pi GPIO 串口通讯</h1>
+<h2 id="linux-nodejs-serialport">——安装并使用 Linux 原生工具测试 与 Nodejs SerialPort 开发的过程</h2>
+<h2 id="_1">目录</h2>
+<p><strong><a href="#1.-安装-gcc-4.8-和-g++-4.8">1. 安装 gcc 4.8 和 g++ 4.8</a></strong></p>
+<p><strong><a href="#2.-启用-GPIO-串口">2. 启用 GPIO 串口</a></strong></p>
+<p><strong><a href="#3.-测试-GPIO-串口">3. 测试 GPIO 串口</a></strong></p>
+<p><strong><a href="#4.-安装-nodejs">4. 安装 nodejs</a></strong></p>
+<p><strong><a href="#5.-安装-serialport">5. 安装 serialport </a></strong></p>
+<p><strong><a href="#6.-开发示例">6. 开发示例</a></strong></p>
+<h3 id="_2">准备工作</h3>
+<ul>
+<li>
+<p>创建一个用户：<code>add user</code></p>
+</li>
+<li>
+<p>切换到用户文件夹：<code>cd /home/catcuts</code></p>
+</li>
+<li>
+<p>编辑：<code>nano /etc/sudoers</code> 并保存</p>
+</li>
+</ul>
+<blockquote>
+<p>在如下地方的下一行，添加 <code>catcuts ALL=(ALL:ALL) ALL</code> 并换行
+```shell</p>
+<h1 id="user-privilege-specification">User privilege specification</h1>
+<p>root    ALL=(ALL:ALL) ALL
+```</p>
+</blockquote>
+<ul>
+<li>
+<p>修改系统参数：<code>echo "vm.mmap_min_addr = 4096" &gt;  /etc/sysctl.d/mmap_min_addr.conf</code></p>
+</li>
+<li>
+<p>重启：<code>reboot</code></p>
+</li>
+</ul>
+<h3 id="1-gcc-48-g-48">1. 安装 gcc 4.8 和 g++ 4.8</h3>
+<ul>
+<li>请按照这个步骤：<a href="https://somewideopenspace.wordpress.com/2014/02/28/gcc-4-8-on-raspberry-pi-wheezy/">GCC 4.8 ON RASPBERRY PI WHEEZY</a></li>
+</ul>
+<p><strong>注意</strong>：最后一步不用做：</p>
+<blockquote>
+<p>If you want to change it, you can ...</p>
+</blockquote>
+<ul>
+<li>检查 <code>gcc -v &amp;&amp; g++ -v</code></li>
+</ul>
+<blockquote>
+<p><code>shell
+root@orangepi:/home/catcuts# gcc -v &amp;&amp; g++ -v
+...（略）
+gcc version 4.8.4 (Raspbian 4.8.4-1) 
+...（略）
+gcc version 4.8.4 (Raspbian 4.8.4-1)</code></p>
+</blockquote>
+<ul>
+<li>还原软件源</li>
+<li><code>sudo mv /etc/apt/preferences /etc/apt/preferences.bkup</code></li>
+<li><code>sudo nano /etc/apt/sources.list</code> 修改全部内容为：  </li>
+</ul>
+<pre><code class="shell">deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib rpi
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib rpi
+</code></pre>
+
+<ul>
+<li><code>sudo apt-get udpate</code></li>
+</ul>
+<h3 id="2-gpio">2. 启用 GPIO 串口</h3>
+<ul>
+<li>
+<p>查看是否已启用：<code>ls /dev/ttyS*</code> 是否有 <code>/dev/ttyS1</code> 如果有则已启用，跳到第 2 步。否则：</p>
+</li>
+<li>
+<p>安装编译依赖：<code>apt-get install -y libusb-1.0-0-dev</code>；</p>
+</li>
+<li>
+<p>安装工具链：<code>git clone git://github.com/linux-sunxi/sunxi-tools.git</code>；</p>
+</li>
+<li>
+<p>编译工具链：<code>cd sunxi-tools</code> 然后 <code>make</code>；完后：<code>cd ..</code>；</p>
+</li>
+<li>
+<p>复制：<code>cp /boot/script.bin ./script.bin</code>，不要影响源文件即可；</p>
+</li>
+<li>
+<p>备份：<code>cp ./script.bin ./script.bin.bkup</code>，保险起见；</p>
+</li>
+<li>
+<p>转换格式：<code>./sunxi-tools/bin2fex ./script.bin &gt; ./script.fex</code> （出现 warning 可以忽略）</p>
+</li>
+<li>
+<p>编辑：<code>nano ./script.fex</code> 找到如下：</p>
+</li>
+</ul>
+<pre><code class="bash">[uart1]
+uart_used = 0
+uart_port = 1
+uart_type = 4
+uart_tx = port:PG06&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_rx = port:PG07&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_rts = port:PG08&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_cts = port:PG09&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+</code></pre>
+
+<p>改为：
+（注：其中 uart_type 指的是 串口通讯的线制。这里采用的是 2 线制度，所以删掉了后面两行。如果你用的是 4 线制，则保留。）</p>
+<pre><code class="bash">[uart1]
+uart_used = 1
+uart_port = 1
+uart_type = 2
+uart_tx = port:PG06&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_rx = port:PG07&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+</code></pre>
+
+<p>保存；</p>
+<ul>
+<li>
+<p>转回格式：<code>./sunxi-tools/fex2bin ./script.fex &gt; ./script.bin</code>（出现 warning 可以忽略）‘</p>
+</li>
+<li>
+<p>覆盖原文：<code>cp ./script.bin /boot/script.bin</code>；</p>
+</li>
+<li>
+<p>重启：<code>reboot</code>；</p>
+</li>
+<li>
+<p>查看是否已启用：<code>ls /dev/ttyS*</code> 是否有 <code>/dev/ttyS1</code> 如果有则已启用，跳到第 2 步。否则：异常。</p>
+</li>
+<li>
+<p>切换到用户文件夹：<code>cd /home/catcuts</code></p>
+</li>
+</ul>
+<h3 id="3-gpio">3. 测试 GPIO 串口</h3>
+<ul>
+<li>
+<p>安装：<code>sudo apt-get install -y minicom screen</code></p>
+</li>
+<li>
+<p><code>mimicom -s</code> 设置串口</p>
+</li>
+<li>
+<p><code>screen /dev/ttyS1 &lt;波特率 与对方匹配&gt;</code> 以接收来自串口 S1 的数据（注：串口数据一旦被取走，就没有了，意味着一个串口只能分给一个程序接收，先到先得）</p>
+</li>
+<li>
+<p><code>echo '要发送的数据' &gt; /dev/ttyS1</code> 以发送数据到串口 S1</p>
+</li>
+</ul>
+<p>注：可以开两个窗口，便于观察。注意：出现全 0 或 &lt;break> 都是异常。</p>
+<h3 id="4-nodejs">4. 安装 nodejs</h3>
+<p>注：版本以 10.5.0 为例。</p>
+<ul>
+<li>
+<p>下载：<code>wget https://nodejs.org/dist/latest-v10.x/node-v10.5.0-linux-armv7l.tar.gz</code>；</p>
+</li>
+<li>
+<p>解压：<code>tar xvzf node*</code>；</p>
+</li>
+<li>
+<p>切换用户：<code>su catcuts</code>；</p>
+</li>
+<li>
+<p>创建文件夹：<code>sudo mkdir /opt/node</code>；</p>
+</li>
+<li>
+<p>安装：<code>sudo cp -a /home/catcuts/node*/* /opt/node</code>；</p>
+</li>
+<li>
+<p>退出：<code>exit</code>；</p>
+</li>
+<li>
+<p>设置 root 用户的路径：</p>
+</li>
+</ul>
+<pre><code class="bash">echo &quot;PATH=$PATH:/opt/node/bin&quot; &gt;&gt; /root/.profile
+echo &quot;export PATH&quot; &gt;&gt; /root/.profile
+PATH=$PATH:/opt/node/bin
+export PATH
+</code></pre>
+
+<ul>
+<li>
+<p>检验：<code>node -v</code> 无异常 然后 <code>npm -v</code> 也无异常；则成功，否则：异常。</p>
+</li>
+<li>
+<p>切换用户：<code>su catcuts</code>；</p>
+</li>
+<li>
+<p>设置 catcuts 用户的路径：</p>
+</li>
+</ul>
+<pre><code class="bash">echo &quot;PATH=$PATH:/opt/node/bin&quot; &gt;&gt; /home/catcuts/.profile
+echo &quot;export PATH&quot; &gt;&gt; /home/catcuts/.profile
+PATH=$PATH:/opt/node/bin
+export PATH
+</code></pre>
+
+<ul>
+<li>检验：<code>node -v</code> 无异常 然后 <code>npm -v</code> 也无异常；则成功，否则：异常。</li>
+</ul>
+<hr />
+<p>注：环境部署到此位置，后面为开发。</p>
+<h3 id="5-serialport">5. 安装 serialport</h3>
+<ul>
+<li>
+<p>创建 <code>mkdir /home/catcuts/serialport_demo</code> 并进入 <code>cd /home/catcuts/serialport_demo</code>；</p>
+</li>
+<li>
+<p>初始化：<code>npm init</code>；</p>
+</li>
+<li>
+<p>安装：<code>npm install serialport</code> （注意，最好不要以 root 身份安装）。</p>
+</li>
+</ul>
+<h3 id="6">6. 开发示例</h3>
+<ul>
+<li>
+<p>官方网站：<a href="https://github.com/node-serialport/node-serialport#opening-a-port">node-serialport Github</a> 和 <a href="https://node-serialport.github.io/node-serialport/">node-serialport Document</a></p>
+</li>
+<li>
+<p>开发示例：（另一方可以用 <code>cutecom</code> 进行相应的收发数据）</p>
+</li>
+</ul>
+<pre><code class="javascript">function startSending() {
+  var time = 0;
+
+  console.log('started')
+
+  setTimeout(function again() {
+    console.log('again');
+    port.write(String(time)+'\n', function(err) {
+      console.log('sent')
+      if (err) {
+        return console.log('Error on write: ', err.message);
+      }
+      console.log('message written' + time);
+      time++;
+      setTimeout(again, 1000);
+    });
+  }, 1000);
+};
+
+var SerialPort = require('serialport');
+var port = new SerialPort('/dev/ttyS1', {
+  baudRate: 115200
+});
+
+port.on('data', function (data) {
+  console.log('Data:', data.toString(&quot;hex&quot;));
+});
+
+// Read data that is available but keep the stream from entering &quot;flowing mode&quot;
+port.on('readable', function () {
+  console.log('Data:', port.read());
+});
+
+startSending();
+
+</code></pre>
+
+<p><code>*END*</code></p>
+<h3 id="_3">其它事项</h3>
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/hirvonen/article/details/50899985">扩容</a></p>
+</li>
+<li>
+<p><a href="https://liftcodeplay.com/2017/06/30/how-to-install-python-3-6-on-raspbian-linux-for-raspberry-pi/">安装 python3.6</a></p>
+</li>
+</ul>
+<p><a href="#Orange-Pi-GPIO-串口通讯">TOP</a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

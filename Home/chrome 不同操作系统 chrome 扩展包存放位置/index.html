@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>My Docs</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Chrome 不同操作系统 chrome 扩展包存放位置 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,13 +19,13 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">My Docs</a>
+                    <a class="navbar-brand" href="../..">My Docs</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,14 +47,14 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
+                                <a href="../../web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="Home/web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
+    <a href="../web/ http/ 关于/ POST、PUT、PATCH/ 的区别.md">web\ http\ 关于\ POST、PUT、PATCH\ 的区别</a>
 </li>
                                 </ul>
                             </li>
@@ -74,28 +74,34 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
-            <li><a href="#commands">Commands</a></li>
-            <li><a href="#project-layout">Project layout</a></li>
+        <li class="main active"><a href="#storage-location-for-unpacked-extensions">Storage Location for Unpacked Extensions</a></li>
+        <li class="main "><a href="#storage-location-for-packed-extensions">Storage Location for Packed Extensions</a></li>
+        <li class="main "><a href="#windows">Windows</a></li>
+        <li class="main "><a href="#linux">Linux</a></li>
+        <li class="main "><a href="#macos">MacOS</a></li>
+        <li class="main "><a href="#chromium">Chromium</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/14543896/where-does-chrome-store-extensions?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">from</a></p>
+</blockquote>
+<h3 id="storage-location-for-unpacked-extensions">Storage Location for Unpacked Extensions</h3>
+<p>Extension engine does not explicitly change their location or add a reference to its local paths, they are left in the place where there are selected from in all <strong>Operating Systems</strong>.</p>
+<p><strong>Ex</strong>: If i load a unpacked Extension from <code>E:\Chrome Extension</code> the unpacked Extension is still in the same location</p>
+<h3 id="storage-location-for-packed-extensions">Storage Location for Packed Extensions</h3>
+<p>Navigate to <code>chrome://version/</code> and look for <strong>Profile Path</strong>, it is your default directory and Extensions Folder is where all the <strong><code>extensions</code>, <code>apps</code>, <code>themes</code></strong> are stored</p>
+<p><strong>Ex:</strong></p>
+<h3 id="windows">Windows</h3>
+<p>If my <strong>Profile Path</strong> is <code>%userprofile%\AppData\Local\Google\Chrome\User Data\Default</code> then my storage directory is:</p>
+<p><code>C:\Users\&lt;Your_User_Name&gt;\AppData\Local\Google\Chrome\User Data\Default\Extensions</code> </p>
+<h3 id="linux">Linux</h3>
+<p><code>~/.config/google-chrome/Default/Extensions/</code></p>
+<h3 id="macos">MacOS</h3>
+<p><code>~/Library/Application\ Support/Google/Chrome/Default/Extensions</code></p>
+<h3 id="chromium">Chromium</h3>
+<p><code>~/.config/chromium/Default/Extensions</code></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -103,11 +109,11 @@ docs/
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -175,8 +181,3 @@ docs/
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2018-10-10 11:02:57
--->
