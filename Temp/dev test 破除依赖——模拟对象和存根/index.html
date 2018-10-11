@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Chrome 不同操作系统 chrome 扩展包存放位置 - My Docs</title>
+        <title>Dev test 破除依赖——模拟对象和存根 - My Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -67,35 +67,6 @@
                                     
 <li >
     <a href="../../Git/git 设置和取消代理/">Git 设置和取消代理</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="../c++ 宏定义 #define 和常量 const 的区别/">C++ 宏定义 #define 和常量 const 的区别</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">Chrome 不同操作系统 chrome 扩展包存放位置</a>
-</li>
-                                    
-<li >
-    <a href="../dev test 破除依赖——模拟对象和存根/">Dev test 破除依赖——模拟对象和存根</a>
-</li>
-                                    
-<li >
-    <a href="../idea 一个物联网云平台架构/">Idea 一个物联网云平台架构</a>
-</li>
-                                    
-<li >
-    <a href="../markdown 在 markdown 代码块中插入链接/">Markdown 在 markdown 代码块中插入链接</a>
-</li>
-                                    
-<li >
-    <a href="../windows 安装 Windows Subsystem for Linux/">windows 安装 Windows Subsystem for Linux</a>
 </li>
                                 </ul>
                             </li>
@@ -323,6 +294,35 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Temp <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../c++ 宏定义 #define 和常量 const 的区别/">C++ 宏定义 #define 和常量 const 的区别</a>
+</li>
+                                    
+<li >
+    <a href="../chrome 不同操作系统 chrome 扩展包存放位置/">Chrome 不同操作系统 chrome 扩展包存放位置</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Dev test 破除依赖——模拟对象和存根</a>
+</li>
+                                    
+<li >
+    <a href="../idea 一个物联网云平台架构/">Idea 一个物联网云平台架构</a>
+</li>
+                                    
+<li >
+    <a href="../markdown 在 markdown 代码块中插入链接/">Markdown 在 markdown 代码块中插入链接</a>
+</li>
+                                    
+<li >
+    <a href="../windows 安装 Windows Subsystem for Linux/">windows 安装 Windows Subsystem for Linux</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -349,12 +349,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../c++ 宏定义 #define 和常量 const 的区别/">
+                                <a rel="next" href="../chrome 不同操作系统 chrome 扩展包存放位置/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../dev test 破除依赖——模拟对象和存根/">
+                                <a rel="prev" href="../idea 一个物联网云平台架构/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -366,34 +366,14 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#storage-location-for-unpacked-extensions">Storage Location for Unpacked Extensions</a></li>
-        <li class="main "><a href="#storage-location-for-packed-extensions">Storage Location for Packed Extensions</a></li>
-        <li class="main "><a href="#windows">Windows</a></li>
-        <li class="main "><a href="#linux">Linux</a></li>
-        <li class="main "><a href="#macos">MacOS</a></li>
-        <li class="main "><a href="#chromium">Chromium</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<blockquote>
-<p><a href="https://stackoverflow.com/questions/14543896/where-does-chrome-store-extensions?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">from</a></p>
-</blockquote>
-<h3 id="storage-location-for-unpacked-extensions">Storage Location for Unpacked Extensions</h3>
-<p>Extension engine does not explicitly change their location or add a reference to its local paths, they are left in the place where there are selected from in all <strong>Operating Systems</strong>.</p>
-<p><strong>Ex</strong>: If i load a unpacked Extension from <code>E:\Chrome Extension</code> the unpacked Extension is still in the same location</p>
-<h3 id="storage-location-for-packed-extensions">Storage Location for Packed Extensions</h3>
-<p>Navigate to <code>chrome://version/</code> and look for <strong>Profile Path</strong>, it is your default directory and Extensions Folder is where all the <strong><code>extensions</code>, <code>apps</code>, <code>themes</code></strong> are stored</p>
-<p><strong>Ex:</strong></p>
-<h3 id="windows">Windows</h3>
-<p>If my <strong>Profile Path</strong> is <code>%userprofile%\AppData\Local\Google\Chrome\User Data\Default</code> then my storage directory is:</p>
-<p><code>C:\Users\&lt;Your_User_Name&gt;\AppData\Local\Google\Chrome\User Data\Default\Extensions</code> </p>
-<h3 id="linux">Linux</h3>
-<p><code>~/.config/google-chrome/Default/Extensions/</code></p>
-<h3 id="macos">MacOS</h3>
-<p><code>~/Library/Application\ Support/Google/Chrome/Default/Extensions</code></p>
-<h3 id="chromium">Chromium</h3>
-<p><code>~/.config/chromium/Default/Extensions</code></p></div>
+<p><a href="https://www.cnblogs.com/LipeiNet/p/5012101.html">破除依赖</a></p>
+<p><a href="https://www.cnblogs.com/LipeiNet/p/5017726.html">模拟对象和存根</a></p>
+<p><a href="https://www.infoq.com/articles/stubbing-mocking-service-virtualization-differences">Stubbing, Mocking and Service Virtualization Differences for Test and Development Teams</a></p>
+<p><a href="https://vue-test-utils.vuejs.org/zh/api/mount.html">vue-test-utils: mount()</a></p></div>
         </div>
 
         <footer class="col-md-12">

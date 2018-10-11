@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>windows 安装 Windows Subsystem for Linux - My Docs</title>
+        <title>C++ 宏定义 #define 和常量 const 的区别 - My Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -67,35 +67,6 @@
                                     
 <li >
     <a href="../../Git/git 设置和取消代理/">Git 设置和取消代理</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="../c++ 宏定义 #define 和常量 const 的区别/">C++ 宏定义 #define 和常量 const 的区别</a>
-</li>
-                                    
-<li >
-    <a href="../chrome 不同操作系统 chrome 扩展包存放位置/">Chrome 不同操作系统 chrome 扩展包存放位置</a>
-</li>
-                                    
-<li >
-    <a href="../dev test 破除依赖——模拟对象和存根/">Dev test 破除依赖——模拟对象和存根</a>
-</li>
-                                    
-<li >
-    <a href="../idea 一个物联网云平台架构/">Idea 一个物联网云平台架构</a>
-</li>
-                                    
-<li >
-    <a href="../markdown 在 markdown 代码块中插入链接/">Markdown 在 markdown 代码块中插入链接</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">windows 安装 Windows Subsystem for Linux</a>
 </li>
                                 </ul>
                             </li>
@@ -323,6 +294,35 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Temp <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">C++ 宏定义 #define 和常量 const 的区别</a>
+</li>
+                                    
+<li >
+    <a href="../chrome 不同操作系统 chrome 扩展包存放位置/">Chrome 不同操作系统 chrome 扩展包存放位置</a>
+</li>
+                                    
+<li >
+    <a href="../dev test 破除依赖——模拟对象和存根/">Dev test 破除依赖——模拟对象和存根</a>
+</li>
+                                    
+<li >
+    <a href="../idea 一个物联网云平台架构/">Idea 一个物联网云平台架构</a>
+</li>
+                                    
+<li >
+    <a href="../markdown 在 markdown 代码块中插入链接/">Markdown 在 markdown 代码块中插入链接</a>
+</li>
+                                    
+<li >
+    <a href="../windows 安装 Windows Subsystem for Linux/">windows 安装 Windows Subsystem for Linux</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -349,12 +349,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../markdown 在 markdown 代码块中插入链接/">
+                                <a rel="next" href="../../Nodejs/nodejs express 多种方案使用 session 与 cookie/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../Linux/linux Raspberry Pi 串口通讯——安装并使用 Linux 原生工具测试 与 Nodejs SerialPort 开发的过程/">
+                                <a rel="prev" href="../chrome 不同操作系统 chrome 扩展包存放位置/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -366,13 +366,62 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#define-const">宏定义 #define 和常量 const 的区别</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<blockquote>
-<p><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#install-the-windows-subsystem-for-linux">参考</a></p>
-</blockquote></div>
+<h2 id="define-const">宏定义 #define 和常量 const 的区别</h2>
+<ul>
+<li><strong>类型和安全检查不同</strong></li>
+</ul>
+<p>宏定义是字符替换，没有数据类型的区别，同时这种替换没有类型安全检查，可能产生边际效应等错误；</p>
+<p><code>const</code>常量是常量的声明，有类型区别，需要在编译阶段进行类型检查</p>
+<ul>
+<li><strong>编译器处理不同</strong></li>
+</ul>
+<p>宏定义是一个"编译时"概念，在预处理阶段展开，不能对宏定义进行调试，生命周期结束与编译时期；</p>
+<p><code>const</code>常量是一个"运行时"概念，在程序运行使用，类似于一个只读行数据</p>
+<ul>
+<li><strong>存储方式不同</strong></li>
+</ul>
+<p>宏定义是直接替换，不会分配内存，存储与程序的代码段中；</p>
+<p><code>const</code>常量需要进行内存分配，存储与程序的数据段中</p>
+<ul>
+<li><strong>定义域不同</strong></li>
+</ul>
+<pre><code class="c++">void f1 ()
+{
+    #define N 12
+    const int n 12;
+}
+void f2 ()
+{
+    cout&lt;&lt;N &lt;&lt;endl; //正确，N已经定义过，不受定义域限制
+    cout&lt;&lt;n &lt;&lt;endl; //错误，n定义域只在f1函数中
+}
+</code></pre>
+
+<ul>
+<li><strong>定义后能否取消</strong></li>
+</ul>
+<p>宏定义可以通过<code>#undef</code>来使之前的宏定义失效</p>
+<p><code>const</code>常量定义后将在定义域内永久有效</p>
+<pre><code class="c++">void f1()
+{
+  #define N 12
+  const int n = 12;
+
+  #undef N //取消宏定义后，即使在f1函数中，N也无效了
+  #define N 21//取消后可以重新定义
+}
+</code></pre>
+
+<ul>
+<li><strong>是否可以做函数参数</strong></li>
+</ul>
+<p>宏定义不能作为参数传递给函数</p>
+<p><code>const</code>常量可以在函数的参数列表中出现</p></div>
         </div>
 
         <footer class="col-md-12">
