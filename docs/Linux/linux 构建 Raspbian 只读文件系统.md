@@ -1,0 +1,15 @@
+
+
+　　参照 [这篇指导](https://hallard.me/raspberry-pi-read-only/) 制作完成，并测试。
+  
+　　[这里](https://gitlab.com/larsfp/rpi-readonly) 是别人根据上一篇写的脚本。（我自己也写了一个，目前用着没问题，除了 dpchcd5 服务启动异常，不过这里这个脚本我也没测试过。）
+
+　　遇到了 [dhcpcd5 服务启动失败的问题](https://www.raspberrypi.org/forums/viewtopic.php?t=191959)，似乎不影响使用，只是在系统启动时会被服务超时卡很久，我设置了服务启动超时参数为 20s（对单个服务设置超时参数，失败）。
+
+　　[这篇](https://www.raspberrypi.org/forums/viewtopic.php?t=161416) 提出用 overlay 系统来构建只读系统和读写文件系统层——没有实践过，仅供参考。
+  
+　　[这一篇](https://wiki.debian.org/ReadonlyRoot#Enable_readonly_root) 是 Debian 系统通用的只读系统构建方式，[这篇](https://www.raspberrypi.org/forums/viewtopic.php?t=22596) 是对它的提炼。[这里](../%5B%20NTE%20%5D%20Notebooks_fragment/linux%20构建%20Debian%20只读系统【译】.ipynb) 是我做的译文。
+  
+　　[这篇](https://www.logicsupply.com/explore/io-hub/how-to-build-a-read-only-linux-system/) 使用了 union 文件系统来构建——也没有实践过。
+  
+

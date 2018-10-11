@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Linux supervisor 服务启动失败：supervisor.sock no such file - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">My Docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Git <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Git/git add 选项/">Git add 选项</a>
+</li>
+                                    
+<li >
+    <a href="../../Git/git push 允许合并无关历史记录/">Git push 允许合并无关历史记录</a>
+</li>
+                                    
+<li >
+    <a href="../../Git/git 常用命令速查表/">Git 常用命令速查表</a>
+</li>
+                                    
+<li >
+    <a href="../../Git/git 设置和取消代理/">Git 设置和取消代理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Home/c++ 宏定义 #define 和常量 const 的区别/">C++ 宏定义 #define 和常量 const 的区别</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/chrome 不同操作系统 chrome 扩展包存放位置/">Chrome 不同操作系统 chrome 扩展包存放位置</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/dev test 破除依赖——模拟对象和存根/">Dev test 破除依赖——模拟对象和存根</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/idea 一个物联网云平台架构/">Idea 一个物联网云平台架构</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/markdown 在 markdown 代码块中插入链接/">Markdown 在 markdown 代码块中插入链接</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/windows 安装 Windows Subsystem for Linux/">windows 安装 Windows Subsystem for Linux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux Raspberry Pi 串口通讯——安装并使用 Linux 原生工具测试 与 Nodejs SerialPort 开发的过程/">Orange Pi GPIO 串口通讯</a>
+</li>
+                                    
+<li >
+    <a href="../linux apt-get 异常修复/">Linux apt get 异常修复</a>
+</li>
+                                    
+<li >
+    <a href="../linux crontab 使用 shell 脚本设置定时任务/">Linux crontab 使用 shell 脚本设置定时任务</a>
+</li>
+                                    
+<li >
+    <a href="../linux crontab 用户配置文件的位置/">Linux crontab 用户配置文件的位置</a>
+</li>
+                                    
+<li >
+    <a href="../linux deepin 搜狗输入法不能输入中文 | 搜狗输入法重装/">Linux deepin 搜狗输入法不能输入中文 | 搜狗输入法重装</a>
+</li>
+                                    
+<li >
+    <a href="../linux error 117 Structure needs cleaning/">linux error 117 Structure needs cleaning</a>
+</li>
+                                    
+<li >
+    <a href="../linux error Warning, had trouble writing out superblocks/">linux error Warning, had trouble writing out superblocks</a>
+</li>
+                                    
+<li >
+    <a href="../linux error a start job is running for ／etc／rc.local Compatibility/">linux error a start job is running for ／etc／rc.local Compatibility</a>
+</li>
+                                    
+<li >
+    <a href="../linux error device is busy/">Linux error device is busy</a>
+</li>
+                                    
+<li >
+    <a href="../linux fdisk 使用 shell 分区/">Linux fdisk 使用 shell 分区</a>
+</li>
+                                    
+<li >
+    <a href="../linux here document 用法(cat << EOF)/">linux here document 用法(cat << EOF)</a>
+</li>
+                                    
+<li >
+    <a href="../linux raspberry-pi 在树莓派上安装 python 3.6/">Linux raspberry pi 在树莓派上安装 python 3.6</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 25个使用示例/">Linux sed 25个使用示例</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 删除匹配行后的某行/">Linux sed 删除匹配行后的某行</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 匹配行前或后追加/">Linux sed 匹配行前或后追加</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 读取文件的第某行/">Linux sed 读取文件的第某行</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed,awk 避开美元符号($)/">Linux sed,awk 避开美元符号($)</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 捕捉 CTRL-C 等信号/">linux shell 捕捉 CTRL C 等信号</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 给点颜色输出/">Linux shell 给点颜色输出</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 获得日期和时间/">Linux shell 获得日期和时间</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 重定向输出到文件或设备/">Linux shell 重定向输出到文件或设备</a>
+</li>
+                                    
+<li >
+    <a href="../linux signal 信号列表/">Linux signal 信号列表</a>
+</li>
+                                    
+<li >
+    <a href="../linux ssh 一行登录（有暴露密码风险）/">Linux ssh 一行登录（有暴露密码风险）</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Linux supervisor 服务启动失败：supervisor.sock no such file</a>
+</li>
+                                    
+<li >
+    <a href="../linux 一键下载软件包及其依赖到指定位置/">Linux 一键下载软件包及其依赖到指定位置</a>
+</li>
+                                    
+<li >
+    <a href="../linux 不重启更新分区表/">Linux 不重启更新分区表</a>
+</li>
+                                    
+<li >
+    <a href="../linux 为什么只能分 4 个主分区，而且最好留一个 Extended 分区，以及扩展分区不能直接使用，必须分成 Logical 分区才能使用/">linux 为什么只能分 4 个主分区，而且最好留一个 Extended 分区，以及扩展分区不能直接使用，必须分成 Logical 分区才能使用</a>
+</li>
+                                    
+<li >
+    <a href="../linux 修改 swappiness 参数（交换空间）/">Linux 修改 swappiness 参数（交换空间）</a>
+</li>
+                                    
+<li >
+    <a href="../linux 修改时间/">Linux 修改时间</a>
+</li>
+                                    
+<li >
+    <a href="../linux 列出所有支持的文件系统类型/">Linux 列出所有支持的文件系统类型</a>
+</li>
+                                    
+<li >
+    <a href="../linux 创建和授权用户/">Linux 创建和授权用户</a>
+</li>
+                                    
+<li >
+    <a href="../linux 删除指定日期前的文件/">Linux 删除指定日期前的文件</a>
+</li>
+                                    
+<li >
+    <a href="../linux 字符串转整数或浮点数，整数与浮点数两两比较/">Linux 字符串转整数或浮点数，整数与浮点数两两比较</a>
+</li>
+                                    
+<li >
+    <a href="../linux 定时任务/">Linux 定时任务</a>
+</li>
+                                    
+<li >
+    <a href="../linux 构建 Debian 只读系统【译】/">linux 构建 Debian 只读系统【译】</a>
+</li>
+                                    
+<li >
+    <a href="../linux 构建 Raspbian 只读文件系统/">linux 构建 Raspbian 只读文件系统</a>
+</li>
+                                    
+<li >
+    <a href="../linux 硬盘构造与分区/">Linux 硬盘构造与分区</a>
+</li>
+                                    
+<li >
+    <a href="../linux 磁盘分区实践/">Linux 磁盘分区实践</a>
+</li>
+                                    
+<li >
+    <a href="../linux 端口号 - 进程 ID - 进程名 互查/">linux 端口号   进程 ID   进程名 互查</a>
+</li>
+                                    
+<li >
+    <a href="../linux 系统备份与还原/">Linux 系统备份与还原</a>
+</li>
+                                    
+<li >
+    <a href="../linux 终端设置代理访问/">Linux 终端设置代理访问</a>
+</li>
+                                    
+<li >
+    <a href="../linux 解决 etc.network.interfaces dns-nameservers 没有同步到 etc.resolv.conf/">Linux 解决 etc.network.interfaces dns nameservers 没有同步到 etc.resolv.conf</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mqtt <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Mqtt/mqtt qos 机制/">Mqtt qos 机制</a>
+</li>
+                                    
+<li >
+    <a href="../../Mqtt/mqtt 应用实例 判断客户端是否下线/">Mqtt 应用实例 判断客户端是否下线</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mysql <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Mysql/mysql 停止运行的几种方式/">Mysql 停止运行的几种方式</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 数据备份与还原/">Mysql 数据备份与还原</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 数据等目录设置为其他目录（如外接硬盘下的目录）/">Mysql 数据等目录设置为其他目录（如外接硬盘下的目录）</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 查看数据目录等的位置/">Mysql 查看数据目录等的位置</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 注/">Mysql 注</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nodejs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Nodejs/nodejs express artTemplate 简明教程/">nodejs express artTemplate 简明教程</a>
+</li>
+                                    
+<li >
+    <a href="../../Nodejs/nodejs express 多种方案使用 session 与 cookie/">Nodejs express 多种方案使用 session 与 cookie</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Web/web http cookie session 区别/">Web http cookie session 区别</a>
+</li>
+                                    
+<li >
+    <a href="../../Web/web http 关于 POST、PUT、PATCH 的区别/">web http 关于 POST、PUT、PATCH 的区别</a>
+</li>
+                                    
+<li >
+    <a href="../../Web/web http 关于 ssh/">Web http 关于 ssh</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../linux ssh 一行登录（有暴露密码风险）/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../linux 一键下载软件包及其依赖到指定位置/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<blockquote>
+<p><a href="https://github.com/Supervisor/supervisor/issues/480">参考</a></p>
+</blockquote>
+<p>supervisor 服务启动失败：</p>
+<pre><code class="shell">unix:///var/run/supervisor.sock no such file
+</code></pre>
+
+<p>解决方法：</p>
+<pre><code class="shell">sudo touch /var/run/supervisor.sock
+sudo chmod 777 /var/run/supervisor.sock
+sudo service supervisor restart  # 先直接这个，不行再全套
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

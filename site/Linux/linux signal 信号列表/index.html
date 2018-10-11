@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Linux signal 信号列表 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">My Docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Git <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Git/git add 选项/">Git add 选项</a>
+</li>
+                                    
+<li >
+    <a href="../../Git/git push 允许合并无关历史记录/">Git push 允许合并无关历史记录</a>
+</li>
+                                    
+<li >
+    <a href="../../Git/git 常用命令速查表/">Git 常用命令速查表</a>
+</li>
+                                    
+<li >
+    <a href="../../Git/git 设置和取消代理/">Git 设置和取消代理</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Home/c++ 宏定义 #define 和常量 const 的区别/">C++ 宏定义 #define 和常量 const 的区别</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/chrome 不同操作系统 chrome 扩展包存放位置/">Chrome 不同操作系统 chrome 扩展包存放位置</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/dev test 破除依赖——模拟对象和存根/">Dev test 破除依赖——模拟对象和存根</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/idea 一个物联网云平台架构/">Idea 一个物联网云平台架构</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/markdown 在 markdown 代码块中插入链接/">Markdown 在 markdown 代码块中插入链接</a>
+</li>
+                                    
+<li >
+    <a href="../../Home/windows 安装 Windows Subsystem for Linux/">windows 安装 Windows Subsystem for Linux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../linux Raspberry Pi 串口通讯——安装并使用 Linux 原生工具测试 与 Nodejs SerialPort 开发的过程/">Orange Pi GPIO 串口通讯</a>
+</li>
+                                    
+<li >
+    <a href="../linux apt-get 异常修复/">Linux apt get 异常修复</a>
+</li>
+                                    
+<li >
+    <a href="../linux crontab 使用 shell 脚本设置定时任务/">Linux crontab 使用 shell 脚本设置定时任务</a>
+</li>
+                                    
+<li >
+    <a href="../linux crontab 用户配置文件的位置/">Linux crontab 用户配置文件的位置</a>
+</li>
+                                    
+<li >
+    <a href="../linux deepin 搜狗输入法不能输入中文 | 搜狗输入法重装/">Linux deepin 搜狗输入法不能输入中文 | 搜狗输入法重装</a>
+</li>
+                                    
+<li >
+    <a href="../linux error 117 Structure needs cleaning/">linux error 117 Structure needs cleaning</a>
+</li>
+                                    
+<li >
+    <a href="../linux error Warning, had trouble writing out superblocks/">linux error Warning, had trouble writing out superblocks</a>
+</li>
+                                    
+<li >
+    <a href="../linux error a start job is running for ／etc／rc.local Compatibility/">linux error a start job is running for ／etc／rc.local Compatibility</a>
+</li>
+                                    
+<li >
+    <a href="../linux error device is busy/">Linux error device is busy</a>
+</li>
+                                    
+<li >
+    <a href="../linux fdisk 使用 shell 分区/">Linux fdisk 使用 shell 分区</a>
+</li>
+                                    
+<li >
+    <a href="../linux here document 用法(cat << EOF)/">linux here document 用法(cat << EOF)</a>
+</li>
+                                    
+<li >
+    <a href="../linux raspberry-pi 在树莓派上安装 python 3.6/">Linux raspberry pi 在树莓派上安装 python 3.6</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 25个使用示例/">Linux sed 25个使用示例</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 删除匹配行后的某行/">Linux sed 删除匹配行后的某行</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 匹配行前或后追加/">Linux sed 匹配行前或后追加</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed 读取文件的第某行/">Linux sed 读取文件的第某行</a>
+</li>
+                                    
+<li >
+    <a href="../linux sed,awk 避开美元符号($)/">Linux sed,awk 避开美元符号($)</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 捕捉 CTRL-C 等信号/">linux shell 捕捉 CTRL C 等信号</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 给点颜色输出/">Linux shell 给点颜色输出</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 获得日期和时间/">Linux shell 获得日期和时间</a>
+</li>
+                                    
+<li >
+    <a href="../linux shell 重定向输出到文件或设备/">Linux shell 重定向输出到文件或设备</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Linux signal 信号列表</a>
+</li>
+                                    
+<li >
+    <a href="../linux ssh 一行登录（有暴露密码风险）/">Linux ssh 一行登录（有暴露密码风险）</a>
+</li>
+                                    
+<li >
+    <a href="../linux supervisor 服务启动失败：supervisor.sock no such file/">Linux supervisor 服务启动失败：supervisor.sock no such file</a>
+</li>
+                                    
+<li >
+    <a href="../linux 一键下载软件包及其依赖到指定位置/">Linux 一键下载软件包及其依赖到指定位置</a>
+</li>
+                                    
+<li >
+    <a href="../linux 不重启更新分区表/">Linux 不重启更新分区表</a>
+</li>
+                                    
+<li >
+    <a href="../linux 为什么只能分 4 个主分区，而且最好留一个 Extended 分区，以及扩展分区不能直接使用，必须分成 Logical 分区才能使用/">linux 为什么只能分 4 个主分区，而且最好留一个 Extended 分区，以及扩展分区不能直接使用，必须分成 Logical 分区才能使用</a>
+</li>
+                                    
+<li >
+    <a href="../linux 修改 swappiness 参数（交换空间）/">Linux 修改 swappiness 参数（交换空间）</a>
+</li>
+                                    
+<li >
+    <a href="../linux 修改时间/">Linux 修改时间</a>
+</li>
+                                    
+<li >
+    <a href="../linux 列出所有支持的文件系统类型/">Linux 列出所有支持的文件系统类型</a>
+</li>
+                                    
+<li >
+    <a href="../linux 创建和授权用户/">Linux 创建和授权用户</a>
+</li>
+                                    
+<li >
+    <a href="../linux 删除指定日期前的文件/">Linux 删除指定日期前的文件</a>
+</li>
+                                    
+<li >
+    <a href="../linux 字符串转整数或浮点数，整数与浮点数两两比较/">Linux 字符串转整数或浮点数，整数与浮点数两两比较</a>
+</li>
+                                    
+<li >
+    <a href="../linux 定时任务/">Linux 定时任务</a>
+</li>
+                                    
+<li >
+    <a href="../linux 构建 Debian 只读系统【译】/">linux 构建 Debian 只读系统【译】</a>
+</li>
+                                    
+<li >
+    <a href="../linux 构建 Raspbian 只读文件系统/">linux 构建 Raspbian 只读文件系统</a>
+</li>
+                                    
+<li >
+    <a href="../linux 硬盘构造与分区/">Linux 硬盘构造与分区</a>
+</li>
+                                    
+<li >
+    <a href="../linux 磁盘分区实践/">Linux 磁盘分区实践</a>
+</li>
+                                    
+<li >
+    <a href="../linux 端口号 - 进程 ID - 进程名 互查/">linux 端口号   进程 ID   进程名 互查</a>
+</li>
+                                    
+<li >
+    <a href="../linux 系统备份与还原/">Linux 系统备份与还原</a>
+</li>
+                                    
+<li >
+    <a href="../linux 终端设置代理访问/">Linux 终端设置代理访问</a>
+</li>
+                                    
+<li >
+    <a href="../linux 解决 etc.network.interfaces dns-nameservers 没有同步到 etc.resolv.conf/">Linux 解决 etc.network.interfaces dns nameservers 没有同步到 etc.resolv.conf</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mqtt <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Mqtt/mqtt qos 机制/">Mqtt qos 机制</a>
+</li>
+                                    
+<li >
+    <a href="../../Mqtt/mqtt 应用实例 判断客户端是否下线/">Mqtt 应用实例 判断客户端是否下线</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mysql <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Mysql/mysql 停止运行的几种方式/">Mysql 停止运行的几种方式</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 数据备份与还原/">Mysql 数据备份与还原</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 数据等目录设置为其他目录（如外接硬盘下的目录）/">Mysql 数据等目录设置为其他目录（如外接硬盘下的目录）</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 查看数据目录等的位置/">Mysql 查看数据目录等的位置</a>
+</li>
+                                    
+<li >
+    <a href="../../Mysql/mysql 注/">Mysql 注</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nodejs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Nodejs/nodejs express artTemplate 简明教程/">nodejs express artTemplate 简明教程</a>
+</li>
+                                    
+<li >
+    <a href="../../Nodejs/nodejs express 多种方案使用 session 与 cookie/">Nodejs express 多种方案使用 session 与 cookie</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Web/web http cookie session 区别/">Web http cookie session 区别</a>
+</li>
+                                    
+<li >
+    <a href="../../Web/web http 关于 POST、PUT、PATCH 的区别/">web http 关于 POST、PUT、PATCH 的区别</a>
+</li>
+                                    
+<li >
+    <a href="../../Web/web http 关于 ssh/">Web http 关于 ssh</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../linux shell 重定向输出到文件或设备/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../linux ssh 一行登录（有暴露密码风险）/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#1-sighup">1) SIGHUP</a></li>
+        <li class="main "><a href="#2-sigint">2) SIGINT</a></li>
+        <li class="main "><a href="#3-sigquit">3) SIGQUIT</a></li>
+        <li class="main "><a href="#4-sigill">4) SIGILL</a></li>
+        <li class="main "><a href="#5-sigtrap">5) SIGTRAP</a></li>
+        <li class="main "><a href="#6-sigabrt">6) SIGABRT</a></li>
+        <li class="main "><a href="#7-sigbus">7) SIGBUS</a></li>
+        <li class="main "><a href="#8-sigfpe">8) SIGFPE</a></li>
+        <li class="main "><a href="#9-sigkill">9) SIGKILL</a></li>
+        <li class="main "><a href="#10-sigusr1">10) SIGUSR1</a></li>
+        <li class="main "><a href="#11-sigsegv">11) SIGSEGV</a></li>
+        <li class="main "><a href="#12-sigusr2">12) SIGUSR2</a></li>
+        <li class="main "><a href="#13-sigpipe">13) SIGPIPE</a></li>
+        <li class="main "><a href="#14-sigalrm">14) SIGALRM</a></li>
+        <li class="main "><a href="#15-sigterm">15) SIGTERM</a></li>
+        <li class="main "><a href="#17-sigchld">17) SIGCHLD</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<blockquote>
+<p>参考：<a href="https://www.google.com/search?ei=igRhW7TwO-qb0gLN9qCADA&amp;q=linux+%E4%BF%A1%E5%8F%B7%E5%88%97%E8%A1%A8&amp;oq=linux+%E4%BF%A1%E5%8F%B7%E5%88%97%E8%A1%A8&amp;gs_l=psy-ab.3..0l2j0i12k1l5j0l3.105787.108724.0.108907.8.8.0.0.0.0.552.823.2-1j5-1.2.0....0...1c.1j4.64.psy-ab..6.2.823...35i39k1j0i203k1j0i67k1.0.rFmRw-sPwyE">google-search: linux 信号列表</a></p>
+</blockquote>
+<p>我们运行如下命令，可看到Linux支持的信号列表：</p>
+<pre><code class="shell">catcuts@catcuts-PC:~# trap -l
+ 1) SIGHUP   2) SIGINT   3) SIGQUIT  4) SIGILL   5) SIGTRAP
+ 6) SIGABRT  7) SIGBUS   8) SIGFPE   9) SIGKILL 10) SIGUSR1
+11) SIGSEGV 12) SIGUSR2 13) SIGPIPE 14) SIGALRM 15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD 18) SIGCONT 19) SIGSTOP 20) SIGTSTP
+21) SIGTTIN 22) SIGTTOU 23) SIGURG  24) SIGXCPU 25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF 28) SIGWINCH    29) SIGIO   30) SIGPWR
+31) SIGSYS  34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX    
+</code></pre>
+
+<p>列表中，编号为 1 ~ 31 的信号为传统 UNIX 支持的信号，是不可靠信号(非实时的)，</p>
+<p>编号为 32 ~ 63 的信号是后来扩充的，称做可靠信号(实时信号)。</p>
+<p>不可靠信号和可靠信号的区别在于前者不支持排队，可能会造成信号丢失，而后者不会。</p>
+<p>下面我们对编号小于SIGRTMIN的信号进行讨论。</p>
+<h3 id="1-sighup">1) SIGHUP</h3>
+<p>本信号在用户终端连接(正常或非正常)结束时发出, 通常是在终端的控制进程结束时, 通知同一 session 内的各个作业, 这时它们与控制终端不再关联。(简单地说，就是用户退出终端的信号)</p>
+<p>登录 Linux 时，系统会分配给登录用户一个终端(Session)。在这个终端运行的所有程序，包括前台进程组和后台进程组，一般都属于这个 Session。当用户退出 Linux 登录时，前台进程组和后台有对终端输出的进程将会收到 SIGHUP 信号。这个信号的默认操作为终止进程，因此前台进程组和后台有终端输出的进程就会中止。不过可以捕获这个信号，比如 wget 能捕获 SIGHUP 信号，并忽略它，<strong>这样就算退出了 Linux 登录，wget 也能继续下载。</strong></p>
+<p>此外，对于与终端脱离关系的守护进程，这个信号用于通知它重新读取配置文件。</p>
+<h3 id="2-sigint">2) SIGINT</h3>
+<p>程序终止(interrupt)信号, 在用户键入 INTR 字符(通常是 Ctrl-C )时发出，用于通知前台进程组终止进程。</p>
+<h3 id="3-sigquit">3) SIGQUIT</h3>
+<p>和 SIGINT 类似, 但由 QUIT 字符(通常是 Ctrl-\ )来控制. 进程在因收到 SIGQUIT 退出时会产生 core 文件, 在这个意义上类似于一个程序错误信号。</p>
+<h3 id="4-sigill">4) SIGILL</h3>
+<p>执行了非法指令. 通常是因为可执行文件本身出现错误, 或者试图执行数据段. 堆栈溢出时也有可能产生这个信号。</p>
+<h3 id="5-sigtrap">5) SIGTRAP</h3>
+<p>由断点指令或其它 trap 指令产生. 由 debugger 使用。</p>
+<h3 id="6-sigabrt">6) SIGABRT</h3>
+<p>调用 abort 函数生成的信号。</p>
+<h3 id="7-sigbus">7) SIGBUS</h3>
+<p>非法地址, 包括内存地址对齐(alignment)出错。比如访问一个四个字长的整数, 但其地址不是 4 的倍数。它与 SIGSEGV 的区别在于后者是由于对合法存储地址的非法访问触发的(如访问不属于自己存储空间或只读存储空间)。</p>
+<h3 id="8-sigfpe">8) SIGFPE</h3>
+<p>在发生致命的算术运算错误时发出. 不仅包括浮点运算错误, 还包括溢出及除数为0等其它所有的算术的错误。</p>
+<h3 id="9-sigkill">9) SIGKILL</h3>
+<p>用来立即结束程序的运行. <strong>本信号不能被阻塞、处理和忽略。如果管理员发现某个进程终止不了，可尝试发送这个信号。</strong></p>
+<h3 id="10-sigusr1">10) SIGUSR1</h3>
+<p>留给用户使用。</p>
+<h3 id="11-sigsegv">11) SIGSEGV</h3>
+<p>试图访问未分配给自己的内存, 或试图往没有写权限的内存地址写数据.</p>
+<h3 id="12-sigusr2">12) SIGUSR2</h3>
+<p>留给用户使用</p>
+<h3 id="13-sigpipe">13) SIGPIPE</h3>
+<p>管道破裂。这个信号通常在进程间通信产生，比如采用 FIFO(管道) 通信的两个进程，读管道没打开或者意外终止就往管道写，写进程会收到 SIGPIPE 信号。此外用 Socket 通信的两个进程，写进程在写 Socket 的时候，读进程已经终止。</p>
+<h3 id="14-sigalrm">14) SIGALRM</h3>
+<p>时钟定时信号, 计算的是实际的时间或时钟时间. alarm 函数使用该信号.</p>
+<h3 id="15-sigterm">15) SIGTERM</h3>
+<p>程序结束(terminate)信号, 与 SIGKILL 不同的是该信号可以被阻塞和处理。通常用来要求程序自己正常退出，shell 命令 kill 缺省产生这个信号。如果进程终止不了，我们才会尝试 SIGKILL。</p>
+<h3 id="17-sigchld">17) SIGCHLD</h3>
+<p>子进程结束时, 父进程会收到这个信号。</p>
+<p>如果父进程没有处理这个信号，也没有等待(wait)子进程，子进程虽然终止，但是还会在内核进程表中占有表项，这时的子进程称为僵尸进程。这种情况我们应该避免(父进程或者忽略 SIGCHILD 信号，或者捕捉它，或者wait它派生的子进程，或者父进程先终止，这时子进程的终止自动由init进程来接管)。</p>
+<p>18) SIGCONT</p>
+<p>让一个停止(stopped)的进程继续执行. 本信号不能被阻塞. 可以用一个handler来让程序在由stopped状态变为继续执行时完成特定的工作. 例如, 重新显示提示符</p>
+<p>19) SIGSTOP</p>
+<p>停止(stopped)进程的执行. 注意它和terminate以及interrupt的区别:该进程还未结束, 只是暂停执行. 本信号不能被阻塞, 处理或忽略.</p>
+<p>20) SIGTSTP</p>
+<p>停止进程的运行, 但该信号可以被处理和忽略. 用户键入SUSP字符时(通常是Ctrl-Z)发出这个信号</p>
+<p>21) SIGTTIN</p>
+<p>当后台作业要从用户终端读数据时, 该作业中的所有进程会收到SIGTTIN信号. 缺省时这些进程会停止执行.</p>
+<p>22) SIGTTOU</p>
+<p>类似于SIGTTIN, 但在写终端(或修改终端模式)时收到.</p>
+<p>23) SIGURG</p>
+<p>有"紧急"数据或out-of-band数据到达socket时产生.</p>
+<p>24) SIGXCPU</p>
+<p>超过CPU时间资源限制. 这个限制可以由getrlimit/setrlimit来读取/改变。</p>
+<p>25) SIGXFSZ</p>
+<p>当进程企图扩大文件以至于超过文件大小资源限制。</p>
+<p>26) SIGVTALRM</p>
+<p>虚拟时钟信号. 类似于SIGALRM, 但是计算的是该进程占用的CPU时间.</p>
+<p>27) SIGPROF</p>
+<p>类似于SIGALRM/SIGVTALRM, 但包括该进程用的CPU时间以及系统调用的时间.</p>
+<p>28) SIGWINCH</p>
+<p>窗口大小改变时发出.</p>
+<p>29) SIGIO</p>
+<p>文件描述符准备就绪, 可以开始进行输入/输出操作.</p>
+<p>30) SIGPWR</p>
+<p>Power failure</p>
+<p>31) SIGSYS</p>
+<p>非法的系统调用。</p>
+<p>在以上列出的信号中，程序不可捕获、阻塞或忽略的信号有：SIGKILL,SIGSTOP</p>
+<p>不能恢复至默认动作的信号有：SIGILL,SIGTRAP</p>
+<p>默认会导致进程流产的信号有：SIGABRT,SIGBUS,SIGFPE,SIGILL,SIGIOT,SIGQUIT,SIGSEGV,SIGTRAP,SIGXCPU,SIGXFSZ</p>
+<p>默认会导致进程退出的信号有：SIGALRM,SIGHUP,SIGINT,SIGKILL,SIGPIPE,SIGPOLL,SIGPROF,SIGSYS,SIGTERM,SIGUSR1,SIGUSR2,SIGVTALRM</p>
+<p>默认会导致进程停止的信号有：SIGSTOP,SIGTSTP,SIGTTIN,SIGTTOU</p>
+<p>默认进程忽略的信号有：SIGCHLD,SIGPWR,SIGURG,SIGWINCH</p>
+<p>此外，SIGIO在SVR4是退出，在4.3BSD中是忽略；SIGCONT在进程挂起时是继续，否则是忽略，不能被阻塞</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
